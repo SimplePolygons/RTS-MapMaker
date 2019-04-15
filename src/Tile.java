@@ -19,7 +19,7 @@ public class Tile {
     int owner;              // owning player (or notice of a special tile)
     Grid owningGrid;        // Grid to which the Tile belongs to
     // TODO: barricades
-    // TODO: material
+    // TODO: mesh
 
     // CONSTRUCTORS
 
@@ -35,7 +35,7 @@ public class Tile {
         this.owner = NONE;
         this.owningGrid = owningGrid;
         // TODO: barricades
-        // TODO: material
+        // TODO: mesh
     }
 
     // METHODS
