@@ -40,13 +40,21 @@ public class Grid {
     }
 
     /**
+     * Gets the state of the til[x][y]
+     * @param x         coordinate on the grid
+     * @param y         coordinate on the grid
+     * @return          isRoad
+     */
+    public boolean getTileIsRoad(int x, int y) {
+        return tile[x][y].isRoad;
+    }
+    /**
      * Gets the height of the grid
      * @return      height
      */
     public int h() {
         return this.height;
     }
-
     /**
      * Gets the width of the grid
      * @return      width

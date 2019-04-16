@@ -68,9 +68,15 @@ public class GUI extends JFrame {
     private void displayGrid(int h, int w, ActionListener listener) {
         for(int i = 0; i < h; i++){
             for(int j = 0; j < w; j++){
-                tiles[i][j] = new JButton(" ");
-                // tiles[i][j].setSize(new Dimension(50,50));
-                tiles[i][j].setBackground(Color.WHITE);
+                if(grid.getTileIsRoad(i,j)){
+                    tiles[i][j] = new JButton(" ");
+                    // tiles[i][j].setSize(new Dimension(50,50));
+                    tiles[i][j].setBackground(Color.WHITE);
+                }else{
+                    tiles[i][j] = new JButton(" ");
+                    // tiles[i][j].setSize(new Dimension(50,50));
+                    tiles[i][j].setBackground(Color.BLACK);
+                }
                 tiles[i][j].addActionListener(listener);
                 add(tiles[i][j]);
             }
