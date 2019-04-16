@@ -40,6 +40,22 @@ public class Grid {
     }
 
     /**
+     * Gets the height of the grid
+     * @return      height
+     */
+    public int h() {
+        return this.height;
+    }
+
+    /**
+     * Gets the width of the grid
+     * @return      width
+     */
+    public int w() {
+        return this.width;
+    }
+
+    /**
      * Prints the Grid to the console
      * FORMAT: height*width grid, displaying tile numbers
      *         NOTE: every number starts with a tab
