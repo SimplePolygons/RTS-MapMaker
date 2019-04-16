@@ -28,6 +28,9 @@ public class GUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("pressed");
 
+                // remove previous version of the map
+                if(tiles != null) removeTiles();
+
                 // create grid
                 grid = new Grid();
                 int h = grid.h();
@@ -95,6 +98,17 @@ public class GUI extends JFrame {
                 }
                 tiles[i][j].addActionListener(listener);
                 add(tiles[i][j]);
+            }
+        }
+    }
+
+    /**
+     * Removes the Tile buttons
+     */
+    private void removeTiles() {
+        for(int i = 0; i < tiles.length; i++) {
+            for(int j = 0; j < tiles[i].length; j++) {
+                remove(tiles[i][j]);
             }
         }
     }
