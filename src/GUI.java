@@ -15,12 +15,13 @@ public class GUI extends JFrame {
         super("Map Maker");
         setLayout(new FlowLayout());
 
-        //
+        // height and width settings
         TextField tf_height = new TextField();
         TextField tf_width  = new TextField();
         add(tf_height);
         add(tf_width);
 
+        // grid reset/resize button
         JButton gridResize = new JButton("Resize grid");
         gridResize.addActionListener(new ActionListener() {
             @Override
@@ -58,7 +59,6 @@ public class GUI extends JFrame {
                 add(grid.tile[i][j]);
             }
         }
-
         System.out.println("[STATUS]: Grid displayed");
     }
 
