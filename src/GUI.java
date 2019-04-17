@@ -16,9 +16,14 @@ public class GUI extends JFrame {
         setLayout(new FlowLayout());
 
         // height and width settings
+        JLabel label_height = new JLabel("Height: ");
+        add(label_height);
         TextField tf_height = new TextField();
-        TextField tf_width  = new TextField();
         add(tf_height);
+
+        JLabel label_width = new JLabel("Width: ");
+        add(label_width);
+        TextField tf_width  = new TextField();
         add(tf_width);
 
         // grid reset/resize button
