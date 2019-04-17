@@ -2,7 +2,7 @@ public class Grid {
     // ATTRIBUTES
     private int height = 10;        // number of rows of the grid
     private int width  = 14;        // number of the columns of the grid
-    private Tile[][] tile;          // tiles on this grid
+    public Tile[][] tile;          // tiles on this grid
 
     // CONSTRUCTORS
 

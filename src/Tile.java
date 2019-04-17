@@ -1,4 +1,10 @@
-public class Tile {
+import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Tile extends JButton {
     // CONSTANTS
     // orientation
     private int NORTH = 0;          // default
@@ -36,7 +42,35 @@ public class Tile {
         this.owningGrid = owningGrid;
         // TODO: barricades
         // TODO: mesh
+
+        // JButton specifications
+        setPreferredSize(new Dimension(50, 50));
+        // add actionListener
+        addAL();
+
     }
 
     // METHODS
+
+    /**
+     * Adds ActionListener to the Tile, which contains code for when the
+     * Tile is pressed.
+     */
+    public void addAL() {
+        ActionListener listener = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent event){
+                System.out.println("[STATUS]: Pressed Tile " + tileNum);
+                // TODO: onclick actions
+
+                // test button
+                if(isRoad){
+                    setBackground(Color.WHITE);
+                }else{
+                    setBackground(Color.BLACK);
+                }
+            }
+        };
+        addActionListener(listener);
+    }
 }
