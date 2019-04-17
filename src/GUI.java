@@ -18,12 +18,12 @@ public class GUI extends JFrame {
         // height and width settings
         JLabel label_height = new JLabel("Height: ");
         add(label_height);
-        TextField tf_height = new TextField();
+        TextField tf_height = new TextField(4);
         add(tf_height);
 
         JLabel label_width = new JLabel("Width: ");
         add(label_width);
-        TextField tf_width  = new TextField();
+        TextField tf_width  = new TextField(4);
         add(tf_width);
 
         // grid reset/resize button
@@ -36,10 +36,18 @@ public class GUI extends JFrame {
                 // remove previous version of the map
                 if(grid != null) removeTiles();
 
+                // get values for height and width
+                int h = isStringNatural(tf_height.getText());
+                int w = isStringNatural(tf_width.getText());
+
                 // create grid
-                grid = new Grid();
-                int h = grid.h();
-                int w = grid.w();
+                if(h < 1 || w < 1) {
+                    grid = new Grid();
+                    h = grid.h();
+                    w = grid.w();
+                } else {
+                    grid = new Grid(h, w);
+                }
 
                 // display Grid
                 displayGrid(h, w);
@@ -51,6 +59,32 @@ public class GUI extends JFrame {
         });
         add(gridResize);
 
+    }
+
+    /**
+     * Evaluates whether a String is a positive integer.
+     * @param s             String that will be evaluated
+     * @return              positive integer or 0, if the integer is non-positive or s is invalid
+     */
+    private int isStringNatural(String s) {
+        int res = 0;
+
+        // try converting the string to int
+        try {
+            res = Integer.parseInt(s.trim());
+        } catch (Exception e) {
+            // in case the string is invalid, raise error
+            System.out.println("[SYS]: Invalid input, should be int");
+            System.out.println("[ERR]: " + e);
+        }
+
+        // handle non-positive numbers
+        if(res < 1) {
+            System.out.println("[SYS]: Setting to default");
+            res = 0;
+        }
+
+        return res;
     }
 
     /**
