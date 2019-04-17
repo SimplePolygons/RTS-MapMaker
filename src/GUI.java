@@ -25,7 +25,7 @@ public class GUI extends JFrame {
         gridResize.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("pressed");
+                System.out.println("[STATUS]: Pressed");
 
                 // remove previous version of the map
                 if(grid != null) removeTiles();
@@ -71,6 +71,7 @@ public class GUI extends JFrame {
                 remove(grid.tile[i][j]);
             }
         }
+        System.out.println("[STATUS]: Grid removed");
     }
 
 

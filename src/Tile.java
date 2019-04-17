@@ -64,7 +64,7 @@ public class Tile extends JButton {
                 // TODO: onclick actions
 
                 // test button
-                if(isRoad){
+                if(isRoad = !isRoad){
                     setBackground(Color.WHITE);
                 }else{
                     setBackground(Color.BLACK);
