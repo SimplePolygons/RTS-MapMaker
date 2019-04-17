@@ -1,4 +1,18 @@
 public class Grid {
+    // CONSTANTS
+    // orientation
+    protected int NORTH = 0;          // default
+    protected int EAST  = 1;
+    protected int SOUTH = 2;
+    protected int WEST  = 3;
+
+    // owning player
+    protected int NONE       = 0;     // default
+    protected int PLAYER_ONE = 1;
+    protected int PLAYER_TWO = 2;
+    protected int SPECIAL    = 3;
+
+
     // ATTRIBUTES
     private int height = 10;        // number of rows of the grid
     private int width  = 14;        // number of the columns of the grid
