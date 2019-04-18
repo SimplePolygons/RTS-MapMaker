@@ -1,30 +1,35 @@
-import java.awt.FlowLayout;
-import java.awt.Color;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.TextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.JPanel;
 import javax.swing.JOptionPane;
 
 public class GUI extends JFrame {
     private static Grid grid;
+    JPanel grid_panel = new JPanel();
 
     public GUI() {
         super("Map Maker");
-        setLayout(new FlowLayout());
+
+        JPanel settings_panel = new JPanel();
+
+        grid_panel.setLayout(new FlowLayout());
+        settings_panel.setLayout(new FlowLayout());
+
 
         // height and width settings
         JLabel label_height = new JLabel("Height: ");
-        add(label_height);
+        settings_panel.add(label_height);
         TextField tf_height = new TextField(4);
-        add(tf_height);
+        settings_panel.add(tf_height);
 
         JLabel label_width = new JLabel("Width: ");
-        add(label_width);
+        settings_panel.add(label_width);
         TextField tf_width  = new TextField(4);
-        add(tf_width);
+        settings_panel.add(tf_width);
 
         // grid reset/resize button
         JButton gridResize = new JButton("Resize grid");
@@ -48,17 +53,19 @@ public class GUI extends JFrame {
                 } else {
                     grid = new Grid(h, w);
                 }
-
+                grid_panel.setLayout(new GridLayout(h, w));
                 // display Grid
-                displayGrid(h, w);
+                displayGrid(grid_panel, h, w);
 
                 // refresh GUI
                 repaint();
                 revalidate();
             }
         });
-        add(gridResize);
 
+        settings_panel.add(gridResize);
+        this.add(settings_panel, BorderLayout.NORTH);
+        this.add(grid_panel, BorderLayout.CENTER);
     }
 
     /**
@@ -92,10 +99,10 @@ public class GUI extends JFrame {
      * @param h             height of the grid
      * @param w             width of the grid
      */
-    private void displayGrid(int h, int w) {
+    private void displayGrid(JPanel jp, int h, int w) {
         for(int i = 0; i < h; i++){
             for(int j = 0; j < w; j++){
-                add(grid.tile[i][j]);
+                jp.add(grid.tile[i][j]);
             }
         }
         System.out.println("[STATUS]: Grid displayed");

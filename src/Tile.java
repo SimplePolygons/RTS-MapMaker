@@ -32,6 +32,8 @@ public class Tile extends JButton {
 
         // JButton specifications
         setPreferredSize(new Dimension(50, 50));
+        setMinimumSize(new Dimension(50, 50));
+        setMaximumSize(new Dimension(51, 51));
         // add actionListener
         addAL();
 
