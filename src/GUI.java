@@ -11,7 +11,7 @@ import javax.swing.ScrollPaneLayout;
 public class GUI extends JFrame {
     private static Grid grid;
     private static JPanel grid_panel;
-    // JScrollPane scrollPane;
+    private static JScrollPane scrollPane;
 
     public GUI() {
         super("Map Maker");
@@ -117,7 +117,7 @@ public class GUI extends JFrame {
             }
         }
 
-        this.add(jp, BorderLayout.CENTER);
+        this.add(scrollPane = new JScrollPane(jp), BorderLayout.CENTER);
         System.out.println("[STATUS]: Grid displayed");
     }
 
@@ -130,7 +130,8 @@ public class GUI extends JFrame {
                 grid_panel.remove(grid.tile[i][j]);
             }
         }
-        this.remove(grid_panel);
+        scrollPane.remove(grid_panel);
+        this.remove(scrollPane);
         System.out.println("[STATUS]: Grid removed");
     }
 
