@@ -64,8 +64,10 @@ public class Tile extends JButton {
                 // test button
                 if(isTileSelected = !isTileSelected) {
                     setBorder(owningGrid.SELECTED_BORDER);
+                    owningGrid.selectedTiles.add(this);
                 }else{
                     setBorder(owningGrid.DEFAULT_BORDER);
+                    owningGrid.selectedTiles.remove(this);
                 }
             }
         };
