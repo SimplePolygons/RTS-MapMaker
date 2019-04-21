@@ -50,6 +50,14 @@ public class Tile extends JButton {
     }
 
     // METHODS
+
+    /**
+     * Sets the isRoad value of the Tile.
+     * @param   isRoad      the new value of isRoad
+     */
+    public void setIsRoad(boolean isRoad) {
+        this.isRoad = isRoad;
+    }
     /**
      * Sets orientation of the Tile. The orientation must correspond to
      * a constant in the Grid class
@@ -83,6 +91,17 @@ public class Tile extends JButton {
             }
         };
         addActionListener(listener);
+    }
+
+    /**
+     * Changes the Tile background color based on the state of isRoad attribute
+     */
+    public void displayIsRoad() {
+        if(this.isRoad) {
+            setBackground(Color.WHITE);
+        } else {
+            setBackground(Color.BLACK);
+        }
     }
 
     /**

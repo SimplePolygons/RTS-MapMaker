@@ -28,6 +28,33 @@ public class EditGUI extends JFrame {
      */
     private void setup() {
         // isRoad
+        JPanel isRoad_panel = new JPanel(new FlowLayout());
+        isRoad_panel.add(new JLabel("This tile is a:"));
+
+        String[] isRoad_list = {"ROAD", "BUILDING"};
+        JComboBox isRoad_cb = new JComboBox(isRoad_list);
+        isRoad_cb.setSelectedIndex(0);
+        isRoad_panel.add(isRoad_cb);
+
+        JButton apply_isRoad = new JButton("Apply");
+        isRoad_panel.add(apply_isRoad);
+        //code
+        apply_isRoad.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                boolean val = (isRoad_cb.getSelectedIndex() == 0);
+                int size = grid.selectedTiles.size();
+                for(int i = 0; i < size; i++) {
+                    Tile t = grid.selectedTiles.get(i);
+                    t.setIsRoad(val);
+                    t.displayIsRoad();
+                }
+                // refresh GUI
+                gui.repaint();
+                gui.revalidate();
+            }
+        });
+        this.add(isRoad_panel,  BorderLayout.NORTH);
 
 
         // orientation
@@ -56,7 +83,7 @@ public class EditGUI extends JFrame {
                 gui.revalidate();
             }
         });
-        this.add(orientation_panel);
+        this.add(orientation_panel, BorderLayout.CENTER);
 
         // owner
 
