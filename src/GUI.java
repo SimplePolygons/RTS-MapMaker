@@ -9,9 +9,10 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneLayout;
 
 public class GUI extends JFrame {
-    private static Grid grid;
-    private static JPanel grid_panel;
-    private static JScrollPane scrollPane;
+    private Grid grid;
+    private JPanel grid_panel;
+    private JScrollPane scrollPane;
+    private GUI me = this;  // refference to self
 
     public GUI() {
         super("Map Maker");
@@ -45,6 +46,18 @@ public class GUI extends JFrame {
                 } else {
                     // add the button to change Tile properties
                     JButton editTiles = new JButton("Edit tiles");
+                    editTiles.addActionListener(new ActionListener() {
+                        /**
+                         * Opens a new window in which the user can edit the values of the tiles.
+                         * The changes are displayed here.
+                         * @param e
+                         */
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            EditGUI edit = new EditGUI(grid, me, 500, 500);
+                        }
+                    });
+
                     settings_panel.add(editTiles);
                 }
 

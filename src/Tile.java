@@ -9,6 +9,7 @@ public class Tile extends JButton {
     // ATTRIBUTES
     // button related
     boolean isTileSelected;
+    private Tile me = this; // refference to self
 
     // data related
     Grid owningGrid;        // Grid to which the Tile belongs to
@@ -49,6 +50,14 @@ public class Tile extends JButton {
     }
 
     // METHODS
+    /**
+     * Sets orientation of the Tile. The orientation must correspond to
+     * a constant in the Grid class
+     * @param   orientation         the new orientation of the tile
+     */
+    public void setOrientation(int orientation) {
+        this.orientation = orientation;
+    }
 
     /**
      * Adds ActionListener to the Tile, which contains code for when the
@@ -65,11 +74,11 @@ public class Tile extends JButton {
                 if(isTileSelected = !isTileSelected) {
                     System.out.println("[STATUS]: Selected Tile " + tileNum);
                     setBorder(owningGrid.SELECTED_BORDER);
-                    owningGrid.selectedTiles.add(this);
+                    owningGrid.selectedTiles.add(me);
                 }else{
                     System.out.println("[STATUS]: Deselected Tile " + tileNum);
                     setBorder(owningGrid.DEFAULT_BORDER);
-                    owningGrid.selectedTiles.remove(this);
+                    owningGrid.selectedTiles.remove(me);
                 }
             }
         };

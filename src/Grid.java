@@ -25,7 +25,7 @@ public class Grid {
     private int height = 10;        // number of rows of the grid
     private int width  = 14;        // number of the columns of the grid
     public Tile[][] tile;           // tiles on this grid
-    public ArrayList selectedTiles; // tiles that have been selected
+    public ArrayList<Tile> selectedTiles; // tiles that have been selected
 
 
     // CONSTRUCTORS
@@ -51,7 +51,7 @@ public class Grid {
      */
     private void instantiate() {
         // instantiate the arraylist
-        selectedTiles = new ArrayList();
+        selectedTiles = new ArrayList<Tile>();
 
         // set the size of the grid
         this.tile = new Tile[height][width];
