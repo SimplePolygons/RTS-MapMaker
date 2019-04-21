@@ -6,6 +6,10 @@ import java.awt.event.ActionListener;
 
 public class Tile extends JButton {
     // ATTRIBUTES
+    // button related
+    boolean isTileSelected;
+
+    // data related
     Grid owningGrid;        // Grid to which the Tile belongs to
     boolean isRoad;         // whether the Tile is a road tile or building tile
     int orientation;        // orientation of the tile (based on constants)
@@ -22,6 +26,9 @@ public class Tile extends JButton {
      * @param owningGrid    Grid to which the Tile belongs to
      */
     public Tile(int tileNum, Grid owningGrid) {
+        isTileSelected = false;
+        setBorder(owningGrid.DEFAULT_BORDER);
+
         this.owningGrid = owningGrid;
         this.isRoad = true;
         this.orientation = owningGrid.NORTH;
@@ -53,11 +60,12 @@ public class Tile extends JButton {
                 System.out.println("[STATUS]: Pressed Tile " + tileNum);
                 // TODO: onclick actions
 
+                // System.out.println("Border: " + getBorder().getClass());
                 // test button
-                if(isRoad = !isRoad){
-                    setBackground(Color.WHITE);
+                if(isTileSelected = !isTileSelected) {
+                    setBorder(owningGrid.SELECTED_BORDER);
                 }else{
-                    setBackground(Color.BLACK);
+                    setBorder(owningGrid.DEFAULT_BORDER);
                 }
             }
         };

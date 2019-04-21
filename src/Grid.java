@@ -1,16 +1,23 @@
+import javax.swing.BorderFactory;
+import javax.swing.border.MatteBorder;
+import java.awt.*;
+
 public class Grid {
     // CONSTANTS
     // orientation
-    protected int NORTH = 0;          // default
-    protected int EAST  = 1;
-    protected int SOUTH = 2;
-    protected int WEST  = 3;
-
+    protected final int NORTH = 0;          // default
+    protected final int EAST  = 1;
+    protected final int SOUTH = 2;
+    protected final int WEST  = 3;
     // owning player
-    protected int NONE       = 0;     // default
-    protected int PLAYER_ONE = 1;
-    protected int PLAYER_TWO = 2;
-    protected int SPECIAL    = 3;
+    protected final int NONE       = 0;     // default
+    protected final int PLAYER_ONE = 1;
+    protected final int PLAYER_TWO = 2;
+    protected final int SPECIAL    = 3;
+    // button details
+    final MatteBorder DEFAULT_BORDER = BorderFactory.createMatteBorder(1,1,1,1, Color.BLACK);
+    final MatteBorder SELECTED_BORDER= BorderFactory.createMatteBorder(5, 5, 5, 5, Color.YELLOW);
+
 
 
     // ATTRIBUTES
