@@ -49,6 +49,7 @@ public class GUI extends JFrame {
                 // remove previous version of the map
                 if(grid != null) removeTiles();
 
+
                 // get values for height and width
                 int h = isStringNatural(tf_height.getText());
                 int w = isStringNatural(tf_width.getText());
@@ -62,9 +63,6 @@ public class GUI extends JFrame {
                     grid = new Grid(h, w);
                 }
                 grid_panel.setLayout(new GridLayout(h, w));
-                grid_panel.setPreferredSize(new Dimension(h*50, w*50));
-                grid_panel.setMaximumSize(new Dimension(h*50, w*50));
-                grid_panel.setMinimumSize(new Dimension(h*50, w*50));
 
                 // display Grid
                 displayGrid(grid_panel, h, w);
