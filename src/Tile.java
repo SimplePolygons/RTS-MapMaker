@@ -55,17 +55,18 @@ public class Tile extends JButton {
      */
     public void addAL() {
         ActionListener listener = new ActionListener(){
+            /**
+             * Toggles tile selected and adds/removes it to the list of selected tiles
+             * @param event
+             */
             @Override
             public void actionPerformed(ActionEvent event){
-                System.out.println("[STATUS]: Pressed Tile " + tileNum);
-                // TODO: onclick actions
-
-                // System.out.println("Border: " + getBorder().getClass());
-                // test button
                 if(isTileSelected = !isTileSelected) {
+                    System.out.println("[STATUS]: Selected Tile " + tileNum);
                     setBorder(owningGrid.SELECTED_BORDER);
                     owningGrid.selectedTiles.add(this);
                 }else{
+                    System.out.println("[STATUS]: Deselected Tile " + tileNum);
                     setBorder(owningGrid.DEFAULT_BORDER);
                     owningGrid.selectedTiles.remove(this);
                 }

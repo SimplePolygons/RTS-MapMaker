@@ -21,6 +21,6 @@ public class EditGUI extends JFrame {
      * and assigns listeners to them
      */
     private void setup() {
-
+        // TODO
     }
 }
