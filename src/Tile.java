@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 
 public class Tile extends JButton {
     // ATTRIBUTES
@@ -73,5 +74,22 @@ public class Tile extends JButton {
             }
         };
         addActionListener(listener);
+    }
+
+    /**
+     * Displays the Icon, which indicates the direction of the tile
+     */
+    public void displayOrientation() {
+        if(this.orientation == this.owningGrid.NORTH) {
+            setIcon(new ImageIcon("src/Icons/Arrow_North.png"));
+        } else if(this.orientation == this.owningGrid.EAST) {
+            setIcon(new ImageIcon("src/Icons/Arrow_East.png"));
+        } else if(this.orientation == this.owningGrid.SOUTH) {
+            setIcon(new ImageIcon("src/Icons/Arrow_South.png"));
+        } else if(this.orientation == this.owningGrid.WEST) {
+            setIcon(new ImageIcon("src/Icons/Arrow_West.png"));
+        } else {
+            System.out.println("[ERROR]: unknown orientation");
+        }
     }
 }
