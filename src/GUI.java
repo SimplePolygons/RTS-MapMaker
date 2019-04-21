@@ -18,13 +18,6 @@ public class GUI extends JFrame {
 
         JPanel settings_panel = new JPanel();
         grid_panel = new JPanel(new GridLayout());
-
-        /*
-        scrollPane = new JScrollPane(grid_panel);
-        scrollPane.setLayout(new ScrollPaneLayout());
-        scrollPane.setBounds(5, 5, 500, 500);
-        */
-
         settings_panel.setLayout(new FlowLayout());
 
 
@@ -47,7 +40,14 @@ public class GUI extends JFrame {
                 System.out.println("[STATUS]: Pressed");
 
                 // remove previous version of the map
-                if(grid != null) removeTiles();
+                if(grid != null) {
+                    removeTiles();
+                } else {
+                    // add the button to change Tile properties
+                    JButton editTiles = new JButton("Edit tiles");
+                    settings_panel.add(editTiles);
+                }
+
 
 
                 // get values for height and width

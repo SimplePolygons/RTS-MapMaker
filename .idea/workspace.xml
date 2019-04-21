@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1d3758ad-da34-4e09-8512-6e82d4bf2457" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MapMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,12 +40,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="8530" />
+          <entry key="java" value="8678" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8530" />
+          <entry key="JAVA" value="8678" />
         </counts>
       </usages-collector>
     </session>
@@ -66,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="64" column="59" selection-start-line="64" selection-start-column="59" selection-end-line="64" selection-end-column="59" />
+            <state relative-caret-position="408">
+              <caret line="47" column="50" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="-765">
               <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -134,8 +132,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/Grid.java" />
         <option value="$PROJECT_DIR$/src/Tile.java" />
-        <option value="$PROJECT_DIR$/src/GUI.java" />
         <option value="$PROJECT_DIR$/src/MapMaker.java" />
+        <option value="$PROJECT_DIR$/src/GUI.java" />
       </list>
     </option>
   </component>
@@ -164,7 +162,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555848682685" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555849881165" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -274,21 +272,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Grid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-            <element signature="docComment;method#getTileIsRoad#0;class#Grid#0" />
-            <element signature="docComment;method#h#0;class#Grid#0" />
-            <element signature="docComment;method#w#0;class#Grid#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -306,10 +289,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-765">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="docComment;method#getTileIsRoad#0;class#Grid#0" />
+            <element signature="docComment;method#h#0;class#Grid#0" />
+            <element signature="docComment;method#w#0;class#Grid#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="64" column="59" selection-start-line="64" selection-start-column="59" selection-end-line="64" selection-end-column="59" />
+        <state relative-caret-position="408">
+          <caret line="47" column="50" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
