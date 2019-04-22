@@ -86,6 +86,33 @@ public class EditGUI extends JFrame {
         this.add(orientation_panel, BorderLayout.CENTER);
 
         // owner
+        JPanel owner_panel = new JPanel(new FlowLayout());
+        owner_panel.add(new JLabel("Owner:"));
+
+        String[] owner_list = { "Default", "Player 1", "Player 2", "Special" };
+        JComboBox owner_cb = new JComboBox(owner_list);
+        owner_cb.setSelectedIndex(0);
+        owner_panel.add(owner_cb);
+
+        JButton apply_owner = new JButton("Apply");
+        owner_panel.add(apply_owner);
+        // code
+        apply_owner.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int size = grid.selectedTiles.size();
+                for(int i = 0; i < size; i++) {
+                    Tile t = grid.selectedTiles.get(i);
+                    t.setOwner(owner_cb.getSelectedIndex());
+                    t.displayOwner();
+                }
+                // refresh GUI
+                gui.repaint();
+                gui.revalidate();
+            }
+        });
+        this.add(owner_panel, BorderLayout.SOUTH);
+
 
     }
 }

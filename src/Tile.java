@@ -66,6 +66,13 @@ public class Tile extends JButton {
     public void setOrientation(int orientation) {
         this.orientation = orientation;
     }
+    /**
+     * Sets the owner value of the Tile.
+     * @param   owner      the new owner of the tile
+     */
+    public void setOwner(int owner) {
+        this.owner = owner;
+    }
 
     /**
      * Adds ActionListener to the Tile, which contains code for when the
@@ -118,6 +125,21 @@ public class Tile extends JButton {
             setIcon(new ImageIcon("src/Icons/Arrow_West.png"));
         } else {
             System.out.println("[ERROR]: unknown orientation");
+        }
+    }
+
+    /**
+     * Displays the text, indicating the owner of the tile
+     */
+    public void displayOwner() {
+        if(this.owner == this.owningGrid.PLAYER_ONE) {
+            setText("P1");
+        } else if(this.owner == this.owningGrid.PLAYER_TWO) {
+            setText("P2");
+        } else if(this.owner == this.owningGrid.SPECIAL) {
+            setText("S");
+        } else {
+            setText("D");
         }
     }
 }
