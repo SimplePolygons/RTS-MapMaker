@@ -27,6 +27,10 @@ public class EditGUI extends JFrame {
      * and assigns listeners to them
      */
     private void setup() {
+        // main panel
+        JPanel mainPanel = new JPanel(new GridLayout(3,1)); // NOTE: when adding new edit options, increment the rows parameter!
+        this.add(mainPanel);
+
         // isRoad
         JPanel isRoad_panel = new JPanel(new FlowLayout());
         isRoad_panel.add(new JLabel("This tile is a:"));
@@ -54,7 +58,8 @@ public class EditGUI extends JFrame {
                 gui.revalidate();
             }
         });
-        this.add(isRoad_panel,  BorderLayout.NORTH);
+        // this.add(isRoad_panel,  BorderLayout.NORTH);
+        mainPanel.add(isRoad_panel);
 
 
         // orientation
@@ -83,7 +88,8 @@ public class EditGUI extends JFrame {
                 gui.revalidate();
             }
         });
-        this.add(orientation_panel, BorderLayout.CENTER);
+        // this.add(orientation_panel, BorderLayout.CENTER);
+        mainPanel.add(orientation_panel);
 
         // owner
         JPanel owner_panel = new JPanel(new FlowLayout());
@@ -111,8 +117,8 @@ public class EditGUI extends JFrame {
                 gui.revalidate();
             }
         });
-        this.add(owner_panel, BorderLayout.SOUTH);
-
+        // this.add(owner_panel, BorderLayout.SOUTH);
+        mainPanel.add(owner_panel);
 
     }
 }
