@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneLayout;
+import javax.swing.border.Border;
 
 public class GUI extends JFrame {
     private Grid grid;
@@ -88,6 +89,29 @@ public class GUI extends JFrame {
 
         settings_panel.add(gridResize);
         this.add(settings_panel, BorderLayout.NORTH);
+
+        // Save settings
+        JPanel save_panel = new JPanel(new FlowLayout());
+        save_panel.add(new JLabel("File name: "));
+
+        TextField tf_file_name = new TextField(10);
+        save_panel.add(tf_file_name);
+
+        save_panel.add(new JLabel(".json"));
+
+        JButton save_button = new JButton("SAVE");
+        save_panel.add(save_button);
+        this.add(save_panel, BorderLayout.SOUTH);
+
+        save_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO:
+                // try if the current file name is good
+                // set to default if not
+                // save grid to .json
+            }
+        });
     }
 
     /**
