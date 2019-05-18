@@ -6,8 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneLayout;
-import javax.swing.border.Border;
 
 public class GUI extends JFrame {
     private Grid grid;
@@ -103,15 +101,7 @@ public class GUI extends JFrame {
         save_panel.add(save_button);
         this.add(save_panel, BorderLayout.SOUTH);
 
-        save_button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // TODO:
-                // try if the current file name is good
-                // set to default if not
-                // save grid to .json
-            }
-        });
+        save_button.addActionListener(new JsonMaker(grid));
     }
 
     /**
