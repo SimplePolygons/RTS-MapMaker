@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RTS-MapMaker.iml" filepath="$PROJECT_DIR$/RTS-MapMaker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../main_json/main_json.iml" filepath="$PROJECT_DIR$/../main_json/main_json.iml" />
     </modules>
   </component>
 </project>
