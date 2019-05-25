@@ -53,6 +53,22 @@ public class JsonMaker implements ActionListener  {
 
             // Grid
             // jsonObj.put("Grid", grid);   // this only writes the object pointer, don't use
+            JSONArray tileArray = new JSONArray();
+            for(int i = 0; i < grid.h(); i++) {
+                for(int j = 0; j < grid.w(); j++) {
+                    // tile information
+                    JSONObject t = new JSONObject();
+                    t.put("IsRoad", grid.tile[i][j].isRoad);
+                    t.put("TileNum", grid.tile[i][j].tileNum);
+                    t.put("Orientation", grid.tile[i][j].orientation);
+                    t.put("Owner", grid.tile[i][j].owner);
+
+                    // add to the array
+                    tileArray.put(t);
+                }
+            }
+
+            jsonObj.put("Grid", tileArray);
 
             try {
                 BufferedWriter outStream = new BufferedWriter(new FileWriter(name));
