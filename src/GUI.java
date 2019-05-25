@@ -13,6 +13,8 @@ public class GUI extends JFrame {
     private JScrollPane scrollPane;
     private GUI me = this;  // refference to self
 
+    public JsonMaker jsonmkr = new JsonMaker();
+
     public GUI() {
         super("Map Maker");
 
@@ -82,6 +84,9 @@ public class GUI extends JFrame {
                 // refresh GUI
                 repaint();
                 revalidate();
+
+                // apply the grid to the JsonMaker
+                jsonmkr.applyNewGrid(grid);
             }
         });
 
@@ -101,7 +106,8 @@ public class GUI extends JFrame {
         save_panel.add(save_button);
         this.add(save_panel, BorderLayout.SOUTH);
 
-        save_button.addActionListener(new JsonMaker(grid));
+
+        save_button.addActionListener(jsonmkr);
     }
 
     /**
