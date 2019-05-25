@@ -13,7 +13,7 @@ public class GUI extends JFrame {
     private JScrollPane scrollPane;
     private GUI me = this;  // refference to self
 
-    public JsonMaker jsonmkr = new JsonMaker();
+    public JsonMaker jsonmkr;
 
     public GUI() {
         super("Map Maker");
@@ -106,8 +106,7 @@ public class GUI extends JFrame {
         save_panel.add(save_button);
         this.add(save_panel, BorderLayout.SOUTH);
 
-
-        save_button.addActionListener(jsonmkr);
+        save_button.addActionListener(jsonmkr = new JsonMaker(grid, tf_file_name));
     }
 
     /**

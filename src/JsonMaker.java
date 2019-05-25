@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
@@ -6,23 +7,15 @@ import org.json.*;
 
 public class JsonMaker implements ActionListener  {
     // ATTRIBUTES
-    final String DEFAULT_NAME = "Map";
+    final String DEFAULT_NAME = "Map.json";
 
-    String name;
+    TextField inputLocation;
     Grid grid;
 
     // CONSTRUCTORS
-    public JsonMaker() {
-        this.name = DEFAULT_NAME + ".json";
-        this.grid = null;
-    }
-    public JsonMaker(Grid grid) {
-        this.name = DEFAULT_NAME + ".json";
-        this.grid = grid;
-    }
-    public JsonMaker(String name, Grid grid) {
-        this.name = name + ".json";
-        this.grid = grid;
+    public JsonMaker(Grid g, TextField tf) {
+        this.grid = g;
+        this.inputLocation = tf;
     }
 
     // METHODS
@@ -40,9 +33,6 @@ public class JsonMaker implements ActionListener  {
         if(grid == null) {
             System.out.println("[SYS]: Grid has not been applied");
         } else {
-            // TODO: check if the current file name is good
-            // set to default if not
-
             // prepare JSON
             JSONObject jsonObj = new JSONObject();
 
@@ -66,9 +56,11 @@ public class JsonMaker implements ActionListener  {
                     tileArray.put(t);
                 }
             }
-
             jsonObj.put("Grid", tileArray);
 
+            // Write JSON file
+            String name = inputLocation.getText().trim()+".json";
+            if(name.equals(".json")) name = DEFAULT_NAME;
             try {
                 BufferedWriter outStream = new BufferedWriter(new FileWriter(name));
                 jsonObj.write(outStream);
@@ -77,6 +69,15 @@ public class JsonMaker implements ActionListener  {
                 System.out.println("[SYS]: File " + name + " has been written");
             } catch (Exception exc) {
                 System.out.println("[ERR]: " + exc);
+                try {
+                    BufferedWriter outStream = new BufferedWriter(new FileWriter(DEFAULT_NAME));
+                    jsonObj.write(outStream);
+                    outStream.flush();
+                    outStream.close();
+                    System.out.println("[SYS]: wrote instead to default file: " + DEFAULT_NAME);
+                } catch (Exception exc2) {
+                    System.out.println("[ERR]: While writing to default file:\n" + exc2);
+                }
             }
         }
     }
