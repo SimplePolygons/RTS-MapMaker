@@ -2,8 +2,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
 import org.json.*;
 
 public class JsonMaker implements ActionListener  {
@@ -39,8 +37,9 @@ public class JsonMaker implements ActionListener  {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(grid != null) {
-
+        if(grid == null) {
+            System.out.println("[SYS]: Grid has not been applied");
+        } else {
             // TODO: check if the current file name is good
             // set to default if not
 
@@ -74,12 +73,11 @@ public class JsonMaker implements ActionListener  {
                 BufferedWriter outStream = new BufferedWriter(new FileWriter(name));
                 jsonObj.write(outStream);
                 outStream.flush();
+                outStream.close();
                 System.out.println("[SYS]: File " + name + " has been written");
             } catch (Exception exc) {
                 System.out.println("[ERR]: " + exc);
             }
-        } else {
-            System.out.println("[SYS]: Grid has not been applied");
         }
     }
 }
