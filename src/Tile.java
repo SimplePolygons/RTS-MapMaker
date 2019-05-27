@@ -17,8 +17,8 @@ public class Tile extends JButton {
     int orientation;        // orientation of the tile (based on constants)
     int tileNum;            // number assigned to the tile
     int owner;              // owning player (or notice of a special tile)
+    int mesh_idx;
     // TODO: barricades
-    // TODO: mesh
 
     // CONSTRUCTORS
 
@@ -36,8 +36,8 @@ public class Tile extends JButton {
         this.orientation = owningGrid.NORTH;
         this.tileNum = tileNum;
         this.owner = owningGrid.NONE;
+        this.mesh_idx = owningGrid.NO_MESH;
         // TODO: barricades
-        // TODO: mesh
 
         // JButton specifications
         setPreferredSize(new Dimension(50, 50));
