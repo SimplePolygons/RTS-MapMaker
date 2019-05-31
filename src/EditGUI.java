@@ -121,8 +121,8 @@ public class EditGUI extends JFrame {
         mainPanel.add(owner_panel);
 
         // barricades
-        JPanel barricades_panel = new JPanel(new FlowLayout());
-        barricades_panel.add(new JLabel("Barricade:"), BorderLayout.WEST);
+        JPanel barricades_panel = new JPanel(new GridLayout(1, 4));
+        barricades_panel.add(new JLabel("Barricade:"));
 
         Checkbox[] cb_barr = new Checkbox[4];
         JPanel barr_cb_panel = new JPanel(new GridLayout(4,1));
@@ -132,10 +132,10 @@ public class EditGUI extends JFrame {
         barr_cb_panel.add(cb_barr[grid.EAST] = new Checkbox("East", false));
         barr_cb_panel.add(cb_barr[grid.SOUTH] = new Checkbox("South", false));
         barr_cb_panel.add(cb_barr[grid.WEST] = new Checkbox("West", false));
-        barricades_panel.add(barr_cb_panel, BorderLayout.CENTER);
+        barricades_panel.add(barr_cb_panel);
 
         JButton apply_barricades = new JButton("Apply");
-        barricades_panel.add(apply_barricades, BorderLayout.EAST);
+        barricades_panel.add(apply_barricades);
 
         mainPanel.add(barricades_panel);
     }
