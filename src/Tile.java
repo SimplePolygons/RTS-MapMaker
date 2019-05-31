@@ -18,7 +18,9 @@ public class Tile extends JButton {
     int tileNum;            // number assigned to the tile
     int owner;              // owning player (or notice of a special tile)
     int mesh_idx;
-    // TODO: barricades
+
+    Barricade[] barr;       // array of barricades, size 4, which should
+                            // be the same as the number of orientation directions
 
     // CONSTRUCTORS
 
@@ -37,7 +39,7 @@ public class Tile extends JButton {
         this.tileNum = tileNum;
         this.owner = owningGrid.NONE;
         this.mesh_idx = owningGrid.NO_MESH;
-        // TODO: barricades
+        this.barr = new Barricade[4];
 
         // JButton specifications
         setPreferredSize(new Dimension(50, 50));

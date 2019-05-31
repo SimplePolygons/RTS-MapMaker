@@ -28,7 +28,7 @@ public class EditGUI extends JFrame {
      */
     private void setup() {
         // main panel
-        JPanel mainPanel = new JPanel(new GridLayout(3,1)); // NOTE: when adding new edit options, increment the rows parameter!
+        JPanel mainPanel = new JPanel(new GridLayout(4,1)); // NOTE: when adding new edit options, increment the rows parameter!
         this.add(mainPanel);
 
         // isRoad
@@ -120,5 +120,23 @@ public class EditGUI extends JFrame {
         // this.add(owner_panel, BorderLayout.SOUTH);
         mainPanel.add(owner_panel);
 
+        // barricades
+        JPanel barricades_panel = new JPanel(new FlowLayout());
+        barricades_panel.add(new JLabel("Barricade:"), BorderLayout.WEST);
+
+        Checkbox[] cb_barr = new Checkbox[4];
+        JPanel barr_cb_panel = new JPanel(new GridLayout(4,1));
+
+        // display the new checkboxes
+        barr_cb_panel.add(cb_barr[grid.NORTH] = new Checkbox("North", false));
+        barr_cb_panel.add(cb_barr[grid.EAST] = new Checkbox("East", false));
+        barr_cb_panel.add(cb_barr[grid.SOUTH] = new Checkbox("South", false));
+        barr_cb_panel.add(cb_barr[grid.WEST] = new Checkbox("West", false));
+        barricades_panel.add(barr_cb_panel, BorderLayout.CENTER);
+
+        JButton apply_barricades = new JButton("Apply");
+        barricades_panel.add(apply_barricades, BorderLayout.EAST);
+
+        mainPanel.add(barricades_panel);
     }
 }
