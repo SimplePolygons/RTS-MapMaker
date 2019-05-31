@@ -55,7 +55,7 @@ public class GUI extends JFrame {
                          */
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            EditGUI edit = new EditGUI(grid, me, 250, 400);
+                            EditGUI edit = new EditGUI(grid, me, 350, 400);
                         }
                     });
 
