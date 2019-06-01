@@ -158,14 +158,30 @@ public class EditGUI extends JFrame {
         barricades_panel.add(barr_cb_panel);
 
         // barricade types
-        String[] barr_types = { "Light", "Medium", "Heavy"};
-        JComboBox barr_cb = new JComboBox(barr_types);
+        JComboBox barr_cb = new JComboBox(grid.BARR_TYPE);
         barr_cb.setSelectedIndex(0);
         barricades_panel.add(barr_cb);
 
         // apply barricades button
         JButton apply_barricades = new JButton("Apply");
         barricades_panel.add(apply_barricades);
+        // code
+        apply_barricades.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // get the type of the Barricades
+                String selected_type = (String) barr_cb.getSelectedItem();
+
+                // go through all of the selected Tiles
+                int size = grid.selectedTiles.size();
+                for(int i = 0; i < size; i++) {
+                    Tile t = grid.selectedTiles.get(i);
+                    t.setBarr(selected_type, cb_barr);
+
+                    // TODO: display changes && refresh GUI
+                }
+            }
+        });
 
         mainPanel.add(barricades_panel);
         // ============================================================= //
@@ -173,6 +189,6 @@ public class EditGUI extends JFrame {
         // ============================================================= //
 
 
-        
+
     }
 }
