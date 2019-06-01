@@ -31,7 +31,9 @@ public class EditGUI extends JFrame {
         JPanel mainPanel = new JPanel(new GridLayout(4,1)); // NOTE: when adding new edit options, increment the rows parameter!
         this.add(mainPanel);
 
-        // isRoad
+        // ============================================================= //
+        // ========================== IS ROAD ========================== //
+        // ============================================================= //
         JPanel isRoad_panel = new JPanel(new FlowLayout());
         isRoad_panel.add(new JLabel("This tile is a:"));
 
@@ -60,9 +62,15 @@ public class EditGUI extends JFrame {
         });
         // this.add(isRoad_panel,  BorderLayout.NORTH);
         mainPanel.add(isRoad_panel);
+        // ============================================================= //
+        // ======================== END IS ROAD ======================== //
+        // ============================================================= //
 
 
-        // orientation
+
+        // ============================================================= //
+        // ======================== ORIENTATION ======================== //
+        // ============================================================= //
         JPanel orientation_panel = new JPanel(new FlowLayout());
         orientation_panel.add(new JLabel("Orientation:"));
 
@@ -90,8 +98,15 @@ public class EditGUI extends JFrame {
         });
         // this.add(orientation_panel, BorderLayout.CENTER);
         mainPanel.add(orientation_panel);
+        // ============================================================= //
+        // ====================== END ORIENTATION ====================== //
+        // ============================================================= //
 
-        // owner
+
+
+        // ============================================================= //
+        // =========================== OWNER =========================== //
+        // ============================================================= //
         JPanel owner_panel = new JPanel(new FlowLayout());
         owner_panel.add(new JLabel("Owner:"));
 
@@ -119,8 +134,15 @@ public class EditGUI extends JFrame {
         });
         // this.add(owner_panel, BorderLayout.SOUTH);
         mainPanel.add(owner_panel);
+        // ============================================================= //
+        // ========================= END OWNER ========================= //
+        // ============================================================= //
 
-        // barricades
+
+
+        // ============================================================= //
+        // ========================= BARRICADES ======================== //
+        // ============================================================= //
         JPanel barricades_panel = new JPanel(new GridLayout(1, 4));
         barricades_panel.add(new JLabel("Barricade:"));
 
@@ -146,5 +168,11 @@ public class EditGUI extends JFrame {
         barricades_panel.add(apply_barricades);
 
         mainPanel.add(barricades_panel);
+        // ============================================================= //
+        // ======================= END BARRICADES ====================== //
+        // ============================================================= //
+
+
+        
     }
 }
