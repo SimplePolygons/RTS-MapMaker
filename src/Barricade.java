@@ -1,8 +1,9 @@
 public class Barricade {
     // ATTRIBUTES
-    int type;
-    int hp;
-    int mesh_id;
+    String type;        // Type of the Barricade, array of possibilities
+                        // should be in the Grid class
+    // int hp;
+    // int mesh_id;
 
     // CONSTRUCTORS
     /**
@@ -11,9 +12,9 @@ public class Barricade {
      * @param hp        Amount of health points this barricade still hsa
      * @param mesh_id
      */
-    public Barricade(int type, int hp, int mesh_id) {
+    public Barricade(String type/*, int hp, int mesh_id*/) {
         this.type = type;
-        this.hp = hp;
-        this.mesh_id = mesh_id;
+        // this.hp = hp;
+        // this.mesh_id = mesh_id;
     }
 }
