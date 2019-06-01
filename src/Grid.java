@@ -20,6 +20,8 @@ public class Grid {
     final MatteBorder SELECTED_BORDER= BorderFactory.createMatteBorder(5, 5, 5, 5, Color.YELLOW);
     // mesh details
     protected final int NO_MESH = -1;
+    // barricade types
+    protected final String[] BARR_TYPE = { "None", "Light", "Medium", "Heavy" };
 
 
     // ATTRIBUTES
