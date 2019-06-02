@@ -52,6 +52,18 @@ public class JsonMaker implements ActionListener  {
                     t.put("Orientation", grid.tile[i][j].orientation);
                     t.put("Owner", grid.tile[i][j].owner);
 
+                    // barricades information
+                    JSONObject barricades = new JSONObject();
+                    if(grid.tile[i][j].isRoad) {
+                        Barricade[] tmp = grid.tile[i][j].barr;
+
+                        barricades.put("North", tmp[grid.NORTH].type);
+                        barricades.put("East", tmp[grid.EAST].type);
+                        barricades.put("South", tmp[grid.SOUTH].type);
+                        barricades.put("West", tmp[grid.WEST].type);
+                    }
+                    t.put("Barricades", barricades);
+
                     // add to the array
                     tileArray.put(t);
                 }
