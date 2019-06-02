@@ -1,9 +1,7 @@
-import javax.swing.JButton;
-import java.awt.Color;
-import java.awt.Dimension;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
 
 public class Tile extends JButton {
     // ATTRIBUTES
@@ -18,7 +16,9 @@ public class Tile extends JButton {
     int tileNum;            // number assigned to the tile
     int owner;              // owning player (or notice of a special tile)
     int mesh_idx;
-    // TODO: barricades
+
+    Barricade[] barr;       // array of barricades, size 4, which should
+                            // be the same as the number of orientation directions
 
     // CONSTRUCTORS
 
@@ -37,7 +37,8 @@ public class Tile extends JButton {
         this.tileNum = tileNum;
         this.owner = owningGrid.NONE;
         this.mesh_idx = owningGrid.NO_MESH;
-        // TODO: barricades
+        this.barr = new Barricade[4];
+        setBarr(owningGrid.BARR_TYPE[0]);
 
         // JButton specifications
         setPreferredSize(new Dimension(50, 50));
@@ -72,6 +73,31 @@ public class Tile extends JButton {
      */
     public void setOwner(int owner) {
         this.owner = owner;
+    }
+
+    /**
+     * Sets the Barr value of the Tile by applying the type
+     * to all Barricades. Used to set the value to default
+     * @param type      Type of the Barricades
+     */
+    public void setBarr(String type) {
+        for(int i = 0; i < barr.length; i++) {
+            barr[i] = new Barricade(type);
+        }
+    }
+
+    /**
+     * Sets the Barr value of the Tile by applying the type to all
+     * Barricades checked as true in the Checkbox[] cb.
+     * @param type      Type of the Barricades
+     * @param cb        Array of checkboxes which corresponds to the indexes of the
+     *                  Barricades which should be changed
+     */
+    public void setBarr(String type, Checkbox[] cb) {
+        for(int i = 0; i < barr.length; i++) {
+            if(cb[i].getState())
+                barr[i] = new Barricade(type);
+        }
     }
 
     /**

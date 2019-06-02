@@ -28,10 +28,12 @@ public class EditGUI extends JFrame {
      */
     private void setup() {
         // main panel
-        JPanel mainPanel = new JPanel(new GridLayout(3,1)); // NOTE: when adding new edit options, increment the rows parameter!
+        JPanel mainPanel = new JPanel(new GridLayout(4,1)); // NOTE: when adding new edit options, increment the rows parameter!
         this.add(mainPanel);
 
-        // isRoad
+        // ============================================================= //
+        // ========================== IS ROAD ========================== //
+        // ============================================================= //
         JPanel isRoad_panel = new JPanel(new FlowLayout());
         isRoad_panel.add(new JLabel("This tile is a:"));
 
@@ -60,9 +62,15 @@ public class EditGUI extends JFrame {
         });
         // this.add(isRoad_panel,  BorderLayout.NORTH);
         mainPanel.add(isRoad_panel);
+        // ============================================================= //
+        // ======================== END IS ROAD ======================== //
+        // ============================================================= //
 
 
-        // orientation
+
+        // ============================================================= //
+        // ======================== ORIENTATION ======================== //
+        // ============================================================= //
         JPanel orientation_panel = new JPanel(new FlowLayout());
         orientation_panel.add(new JLabel("Orientation:"));
 
@@ -90,8 +98,15 @@ public class EditGUI extends JFrame {
         });
         // this.add(orientation_panel, BorderLayout.CENTER);
         mainPanel.add(orientation_panel);
+        // ============================================================= //
+        // ====================== END ORIENTATION ====================== //
+        // ============================================================= //
 
-        // owner
+
+
+        // ============================================================= //
+        // =========================== OWNER =========================== //
+        // ============================================================= //
         JPanel owner_panel = new JPanel(new FlowLayout());
         owner_panel.add(new JLabel("Owner:"));
 
@@ -119,6 +134,61 @@ public class EditGUI extends JFrame {
         });
         // this.add(owner_panel, BorderLayout.SOUTH);
         mainPanel.add(owner_panel);
+        // ============================================================= //
+        // ========================= END OWNER ========================= //
+        // ============================================================= //
+
+
+
+        // ============================================================= //
+        // ========================= BARRICADES ======================== //
+        // ============================================================= //
+        JPanel barricades_panel = new JPanel(new GridLayout(1, 4));
+        barricades_panel.add(new JLabel("Barricade:"));
+
+        // barricade locations
+        Checkbox[] cb_barr = new Checkbox[4];
+        JPanel barr_cb_panel = new JPanel(new GridLayout(4,1));
+
+        // display the new checkboxes
+        barr_cb_panel.add(cb_barr[grid.NORTH] = new Checkbox("North", false));
+        barr_cb_panel.add(cb_barr[grid.EAST] = new Checkbox("East", false));
+        barr_cb_panel.add(cb_barr[grid.SOUTH] = new Checkbox("South", false));
+        barr_cb_panel.add(cb_barr[grid.WEST] = new Checkbox("West", false));
+        barricades_panel.add(barr_cb_panel);
+
+        // barricade types
+        JComboBox barr_cb = new JComboBox(grid.BARR_TYPE);
+        barr_cb.setSelectedIndex(0);
+        barricades_panel.add(barr_cb);
+
+        // apply barricades button
+        JButton apply_barricades = new JButton("Apply");
+        barricades_panel.add(apply_barricades);
+        // code
+        apply_barricades.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // get the type of the Barricades
+                String selected_type = (String) barr_cb.getSelectedItem();
+
+                // go through all of the selected Tiles
+                int size = grid.selectedTiles.size();
+                for(int i = 0; i < size; i++) {
+                    Tile t = grid.selectedTiles.get(i);
+                    t.setBarr(selected_type, cb_barr);
+
+                    // TODO: display changes && refresh GUI
+                }
+            }
+        });
+
+        mainPanel.add(barricades_panel);
+        // ============================================================= //
+        // ======================= END BARRICADES ====================== //
+        // ============================================================= //
+
+
 
     }
 }
