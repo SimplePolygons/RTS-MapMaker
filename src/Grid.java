@@ -21,7 +21,9 @@ public class Grid {
     // mesh details
     protected final int NO_MESH = -1;
     // barricade types
-    protected final String[] BARR_TYPE = { "None", "Light", "Medium", "Heavy" };    // first TYPE should always be NONE
+    protected  final int NO_BARRICADES = 0;
+    protected final String[] BARR_TYPE = { "None", "Light", "Medium", "Heavy" };    // first TYPE should always be NONE,
+                                                     // the type constant is represented by the index of the Type String
 
 
     // ATTRIBUTES

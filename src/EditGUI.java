@@ -170,7 +170,7 @@ public class EditGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // get the type of the Barricades
-                String selected_type = (String) barr_cb.getSelectedItem();
+                int selected_type = barr_cb.getSelectedIndex();
 
                 // go through all of the selected Tiles
                 int size = grid.selectedTiles.size();

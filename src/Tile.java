@@ -38,7 +38,7 @@ public class Tile extends JButton {
         this.owner = owningGrid.NONE;
         this.mesh_idx = owningGrid.NO_MESH;
         this.barr = new Barricade[4];
-        setBarr(owningGrid.BARR_TYPE[0]);
+        setBarr(owningGrid.NO_BARRICADES);
 
         // JButton specifications
         setPreferredSize(new Dimension(50, 50));
@@ -80,7 +80,7 @@ public class Tile extends JButton {
      * to all Barricades. Used to set the value to default
      * @param type      Type of the Barricades
      */
-    public void setBarr(String type) {
+    public void setBarr(int type) {
         for(int i = 0; i < barr.length; i++) {
             barr[i] = new Barricade(type);
         }
@@ -93,7 +93,7 @@ public class Tile extends JButton {
      * @param cb        Array of checkboxes which corresponds to the indexes of the
      *                  Barricades which should be changed
      */
-    public void setBarr(String type, Checkbox[] cb) {
+    public void setBarr(int type, Checkbox[] cb) {
         for(int i = 0; i < barr.length; i++) {
             if(cb[i].getState())
                 barr[i] = new Barricade(type);
