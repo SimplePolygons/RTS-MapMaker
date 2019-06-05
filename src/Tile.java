@@ -15,7 +15,7 @@ public class Tile extends JButton {
     int orientation;        // orientation of the tile (based on constants)
     int tileNum;            // number assigned to the tile
     int owner;              // owning player (or notice of a special tile)
-    int mesh_idx;
+    int mesh_idx;           // index of the mesh that will be used for this Tile in the game
 
     Barricade[] barr;       // array of barricades, size 4, which should
                             // be the same as the number of orientation directions
@@ -74,6 +74,13 @@ public class Tile extends JButton {
     public void setOwner(int owner) {
         this.owner = owner;
     }
+    /**
+     * Sets the mesh index of the Tile
+     * @param mesh_idx      index to be set
+     */
+    public void setMesh_idx(int mesh_idx) {
+        this.mesh_idx = mesh_idx;
+    }
 
     /**
      * Sets the Barr value of the Tile by applying the type
@@ -85,7 +92,6 @@ public class Tile extends JButton {
             barr[i] = new Barricade(type);
         }
     }
-
     /**
      * Sets the Barr value of the Tile by applying the type to all
      * Barricades checked as true in the Checkbox[] cb.
