@@ -157,7 +157,7 @@ public class EditGUI extends JFrame {
         String[] mesh_list_DEMO = {"BT_Example_001", "BT_Example_002", "RT_Example_001", "RT_Example_002"};
         JComboBox mesh_cb = new JComboBox(mesh_list_DEMO);
         mesh_cb.setSelectedIndex(0);
-        mesh_panel.add(owner_cb);
+        mesh_panel.add(mesh_cb);
 
         JButton apply_mesh_idx = new JButton("Apply");
         mesh_panel.add(apply_mesh_idx);
