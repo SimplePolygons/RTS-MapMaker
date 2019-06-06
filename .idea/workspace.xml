@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="1d3758ad-da34-4e09-8512-6e82d4bf2457" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="1d3758ad-da34-4e09-8512-6e82d4bf2457" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/JsonMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JsonMaker.java" afterDir="false" />
+    </list>
+>>>>>>> Json
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,13 +57,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="java" value="18119" />
+=======
+          <entry key="java" value="17115" />
+>>>>>>> Json
           <entry key="json" value="87" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+<<<<<<< HEAD
           <entry key="JAVA" value="18119" />
+=======
+          <entry key="JAVA" value="17115" />
+>>>>>>> Json
           <entry key="JSON" value="87" />
         </counts>
       </usages-collector>
@@ -77,8 +91,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EditGUI.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="-118">
               <caret line="175" column="11" selection-start-line="175" selection-start-column="11" selection-end-line="175" selection-end-column="11" />
+=======
+            <state relative-caret-position="55">
+              <caret line="136" column="11" selection-start-line="136" selection-start-column="11" selection-end-line="136" selection-end-column="11" />
+>>>>>>> Json
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,8 +122,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JsonMaker.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="-47">
               <caret line="52" column="58" selection-start-line="52" selection-start-column="58" selection-end-line="52" selection-end-column="58" />
+=======
+            <state relative-caret-position="306">
+              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+>>>>>>> Json
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,6 +154,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tile.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="169">
               <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
               <folding>
@@ -139,6 +164,11 @@
                 <element signature="docComment;method#setMesh_idx#0;class#Tile#0" />
                 <element signature="docComment;method#setBarr#0;class#Tile#0" />
                 <element signature="method#setBarr#0;class#Tile#0" />
+=======
+            <state relative-caret-position="1223">
+              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+              <folding>
+>>>>>>> Json
                 <element signature="docComment;method#setBarr#1;class#Tile#0" />
                 <element signature="method#setBarr#1;class#Tile#0" />
               </folding>
@@ -194,10 +224,16 @@
         <option value="$PROJECT_DIR$/src/Baricade.java" />
         <option value="$PROJECT_DIR$/src/Barricade.java" />
         <option value="$PROJECT_DIR$/src/Grid.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/JsonMaker.java" />
         <option value="$PROJECT_DIR$/Map.json" />
         <option value="$PROJECT_DIR$/src/Tile.java" />
         <option value="$PROJECT_DIR$/src/EditGUI.java" />
+=======
+        <option value="$PROJECT_DIR$/src/Tile.java" />
+        <option value="$PROJECT_DIR$/Map.json" />
+        <option value="$PROJECT_DIR$/src/JsonMaker.java" />
+>>>>>>> Json
       </list>
     </option>
   </component>
@@ -396,6 +432,30 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/EditGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="136" column="11" selection-start-line="136" selection-start-column="11" selection-end-line="136" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1223">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="docComment;method#setBarr#1;class#Tile#0" />
+            <element signature="method#setBarr#1;class#Tile#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> Json
     <entry file="file://$PROJECT_DIR$/src/Barricade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -445,8 +505,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EditGUI.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-118">
           <caret line="175" column="11" selection-start-line="175" selection-start-column="11" selection-end-line="175" selection-end-column="11" />
+=======
+        <state relative-caret-position="306">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+>>>>>>> Json
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
