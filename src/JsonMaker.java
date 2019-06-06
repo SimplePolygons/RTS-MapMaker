@@ -51,6 +51,7 @@ public class JsonMaker implements ActionListener  {
                     t.put("TileNum", grid.tile[i][j].tileNum);
                     t.put("Orientation", grid.tile[i][j].orientation);
                     t.put("Owner", grid.tile[i][j].owner);
+                    t.put("MeshIdx", grid.tile[i][j].mesh_idx);
 
                     // barricades information
                     JSONObject barricades = new JSONObject();
