@@ -165,10 +165,15 @@ public class EditGUI extends JFrame {
         apply_mesh_idx.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                int size = grid.selectedTiles.size();
+                for(int i = 0; i < size; i++) {
+                    Tile t = grid.selectedTiles.get(i);
+                    t.setMesh_idx(mesh_cb.getSelectedIndex());
 
+                    // TODO: display changes
+                }
             }
         });
-        // this.add(owner_panel, BorderLayout.SOUTH);
         mainPanel.add(mesh_panel);
         // ============================================================= //
         // ========================= END MESH ========================== //
