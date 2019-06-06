@@ -28,7 +28,7 @@ public class EditGUI extends JFrame {
      */
     private void setup() {
         // main panel
-        JPanel mainPanel = new JPanel(new GridLayout(4,1)); // NOTE: when adding new edit options, increment the rows parameter!
+        JPanel mainPanel = new JPanel(new GridLayout(5,1)); // NOTE: when adding new edit options, increment the rows parameter!
         this.add(mainPanel);
 
         // ============================================================= //
@@ -136,6 +136,42 @@ public class EditGUI extends JFrame {
         mainPanel.add(owner_panel);
         // ============================================================= //
         // ========================= END OWNER ========================= //
+        // ============================================================= //
+
+
+
+        // ============================================================= //
+        // =========================== MESH ============================ //
+        // ============================================================= //
+        JPanel mesh_panel = new JPanel(new FlowLayout());
+        mesh_panel.add(new JLabel("Mesh:"));
+
+        // TODO: real time list setting
+        // Get the list of mesh names from a directory (like DEMO)
+        // String[] mesh_list_DEMO = {"BT_Example_001", "BT_Example_002", "RT_Example_001", "RT_Example_002"};
+        // then separate the list into two: roads and buildings.
+        // data should be searched each time the isRoad_cb changes but only applied to tiles of the same type
+        // String[] mesh_roads_list = { "RT_Example_001", "RT_Example_002" };
+        // String[] mesh_buildings_list = { "BT_Example_001", "BT_Example_002" };
+
+        String[] mesh_list_DEMO = {"BT_Example_001", "BT_Example_002", "RT_Example_001", "RT_Example_002"};
+        JComboBox mesh_cb = new JComboBox(mesh_list_DEMO);
+        mesh_cb.setSelectedIndex(0);
+        mesh_panel.add(owner_cb);
+
+        JButton apply_mesh_idx = new JButton("Apply");
+        mesh_panel.add(apply_mesh_idx);
+        // code
+        apply_mesh_idx.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        // this.add(owner_panel, BorderLayout.SOUTH);
+        mainPanel.add(mesh_panel);
+        // ============================================================= //
+        // ========================= END MESH ========================== //
         // ============================================================= //
 
 
