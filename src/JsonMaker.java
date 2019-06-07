@@ -34,6 +34,7 @@ public class JsonMaker implements ActionListener  {
             System.out.println("[SYS]: Grid has not been applied");
         } else {
             // prepare JSON
+            JSONArray jsonArr = new JSONArray();
             JSONObject jsonObj = new JSONObject();
 
             // height&width
@@ -62,6 +63,13 @@ public class JsonMaker implements ActionListener  {
                         barricades.put("East", tmp[grid.EAST].type);
                         barricades.put("South", tmp[grid.SOUTH].type);
                         barricades.put("West", tmp[grid.WEST].type);
+                    } else {
+                        Barricade[] tmp = grid.tile[i][j].barr;
+
+                        barricades.put("North", grid.NO_BARRICADES);
+                        barricades.put("East", grid.NO_BARRICADES);
+                        barricades.put("South", grid.NO_BARRICADES);
+                        barricades.put("West", grid.NO_BARRICADES);
                     }
                     t.put("Barricades", barricades);
 
@@ -70,6 +78,7 @@ public class JsonMaker implements ActionListener  {
                 }
             }
             jsonObj.put("Grid", tileArray);
+            jsonArr.put(jsonObj);
 
             // Write JSON file
             String name = inputLocation.getText().trim()+".json";
