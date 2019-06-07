@@ -85,7 +85,7 @@ public class JsonMaker implements ActionListener  {
             if(name.equals(".json")) name = DEFAULT_NAME;
             try {
                 BufferedWriter outStream = new BufferedWriter(new FileWriter(name));
-                jsonObj.write(outStream);
+                jsonArr.write(outStream);
                 outStream.flush();
                 outStream.close();
                 System.out.println("[SYS]: File " + name + " has been written");
@@ -93,7 +93,7 @@ public class JsonMaker implements ActionListener  {
                 System.out.println("[ERR]: " + exc);
                 try {
                     BufferedWriter outStream = new BufferedWriter(new FileWriter(DEFAULT_NAME));
-                    jsonObj.write(outStream);
+                    jsonArr.write(outStream);
                     outStream.flush();
                     outStream.close();
                     System.out.println("[SYS]: wrote instead to default file: " + DEFAULT_NAME);
