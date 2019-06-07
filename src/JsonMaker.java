@@ -37,6 +37,8 @@ public class JsonMaker implements ActionListener  {
             JSONArray jsonArr = new JSONArray();
             JSONObject jsonObj = new JSONObject();
 
+            jsonObj.put("Name", "NewRow");
+
             // height&width
             jsonObj.put("Height", grid.h());
             jsonObj.put("Width", grid.w());
