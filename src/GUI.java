@@ -11,7 +11,8 @@ public class GUI extends JFrame {
     private Grid grid;
     private JPanel grid_panel;
     private JScrollPane scrollPane;
-    private GUI me = this;  // refference to self
+    private EditGUI edit;
+    private GUI me = this;  // reference to self
 
     public JsonMaker jsonmkr;
 
@@ -44,25 +45,8 @@ public class GUI extends JFrame {
                 // remove previous version of the map
                 if(grid != null) {
                     removeTiles();
-                } else {
-                    // add the button to change Tile properties
-                    JButton editTiles = new JButton("Edit tiles");
-                    editTiles.addActionListener(new ActionListener() {
-                        /**
-                         * Opens a new window in which the user can edit the values of the tiles.
-                         * The changes are displayed here.
-                         * @param e
-                         */
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                            EditGUI edit = new EditGUI(grid, me, 350, 400);
-                        }
-                    });
-
-                    settings_panel.add(editTiles);
+                    remove(edit);
                 }
-
-
 
                 // get values for height and width
                 int h = isStringNatural(tf_height.getText());
@@ -80,6 +64,9 @@ public class GUI extends JFrame {
 
                 // display Grid
                 displayGrid(grid_panel, h, w);
+
+                // display editor panel
+                add(edit = new EditGUI(grid, me, 350, 400), BorderLayout.EAST);
 
                 // refresh GUI
                 repaint();

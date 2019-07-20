@@ -3,20 +3,19 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class EditGUI extends JFrame {
+public class EditGUI extends JPanel {
     // ATTRIBUTES
     Grid grid;
     GUI gui;
 
     // CONSTRUCTORS
     public EditGUI(Grid grid, GUI gui, int width, int height) {
-        super("Editor");
+        // super("Editor");
         this.grid = grid;
         this.gui = gui;
 
         setup();
 
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(width, height);
         setVisible(true);
     }
