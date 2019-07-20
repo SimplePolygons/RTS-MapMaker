@@ -1,6 +1,7 @@
 import javax.swing.BorderFactory;
 import javax.swing.border.MatteBorder;
 import java.awt.*;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 public class Grid {
@@ -25,6 +26,9 @@ public class Grid {
     protected final String[] BARR_TYPE = { "None", "Light", "Medium", "Heavy" };    // first TYPE should always be NONE,
                                                      // the type constant is represented by the index of the Type String
 
+    // GUI details
+    protected boolean isPressed;
+    protected boolean setTo;
 
     // ATTRIBUTES
     private int height = 10;        // number of rows of the grid
@@ -68,6 +72,9 @@ public class Grid {
                 tile[i][j] = new Tile(num++, this);
             }
         }
+
+        isPressed = false;
+        setTo = true;
     }
 
     /**

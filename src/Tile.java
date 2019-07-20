@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class Tile extends JButton {
     // ATTRIBUTES
@@ -46,8 +48,10 @@ public class Tile extends JButton {
         setMaximumSize(new Dimension(50, 50));
 
         // add actionListener
-        addAL();
+        // addAL();
 
+        // add mouseListener
+        addML();
     }
 
     // METHODS
@@ -106,6 +110,18 @@ public class Tile extends JButton {
         }
     }
 
+    public void setSelected(boolean s) {
+        if(isTileSelected = s) {
+            System.out.println("[STATUS]: Selected Tile " + tileNum);
+            setBorder(owningGrid.SELECTED_BORDER);
+            owningGrid.selectedTiles.add(me);
+        }else{
+            System.out.println("[STATUS]: Deselected Tile " + tileNum);
+            setBorder(owningGrid.DEFAULT_BORDER);
+            owningGrid.selectedTiles.remove(me);
+        }
+    }
+
     /**
      * Adds ActionListener to the Tile, which contains code for when the
      * Tile is pressed.
@@ -118,6 +134,8 @@ public class Tile extends JButton {
              */
             @Override
             public void actionPerformed(ActionEvent event){
+                setSelected(!isTileSelected);
+                /*
                 if(isTileSelected = !isTileSelected) {
                     System.out.println("[STATUS]: Selected Tile " + tileNum);
                     setBorder(owningGrid.SELECTED_BORDER);
@@ -127,9 +145,56 @@ public class Tile extends JButton {
                     setBorder(owningGrid.DEFAULT_BORDER);
                     owningGrid.selectedTiles.remove(me);
                 }
+                */
             }
         };
         addActionListener(listener);
+    }
+
+    /**
+     * Adds MouseListeners to this Tile, which contain the code for when mouse drags
+     * over or leaves the Tile
+     */
+    public void addML() {
+        MouseListener mouseListener = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // System.out.println("[SYS]: mouse CLICKED over: " + tileNum);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                System.out.println("[SYS]: mouse PRESSED over: " + tileNum);
+                owningGrid.isPressed = true;
+
+                setSelected(!isTileSelected);
+
+                owningGrid.setTo = isTileSelected;
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                System.out.println("[SYS]: mouse RELEASED over: " + tileNum);
+                owningGrid.isPressed = false;
+
+                // TODO: open EditGUI with selected tiles
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                // System.out.println("[SYS]: mouse ENTERED over: " + tileNum);
+                if(owningGrid.isPressed) {
+                    System.out.println(tileNum);
+                    setSelected(owningGrid.setTo);
+                }
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                // System.out.println("[SYS]: mouse EXITED over: " + tileNum);
+            }
+        };
+        addMouseListener(mouseListener);
     }
 
     /**
