@@ -111,14 +111,20 @@ public class Tile extends JButton {
     }
 
     public void setSelected(boolean s) {
-        if(isTileSelected = s) {
-            System.out.println("[STATUS]: Selected Tile " + tileNum);
-            setBorder(owningGrid.SELECTED_BORDER);
-            owningGrid.selectedTiles.add(me);
+        if(s) {
+            if(!isTileSelected) {
+                System.out.println("[STATUS]: Selected Tile " + tileNum);
+                setBorder(owningGrid.SELECTED_BORDER);
+                owningGrid.selectedTiles.add(me);
+                isTileSelected = true;
+            }
         }else{
-            System.out.println("[STATUS]: Deselected Tile " + tileNum);
-            setBorder(owningGrid.DEFAULT_BORDER);
-            owningGrid.selectedTiles.remove(me);
+            if(isTileSelected) {
+                System.out.println("[STATUS]: Deselected Tile " + tileNum);
+                setBorder(owningGrid.DEFAULT_BORDER);
+                owningGrid.selectedTiles.remove(me);
+                isTileSelected = false;
+            }
         }
     }
 
@@ -176,8 +182,6 @@ public class Tile extends JButton {
             public void mouseReleased(MouseEvent e) {
                 System.out.println("[SYS]: mouse RELEASED over: " + tileNum);
                 owningGrid.isPressed = false;
-
-                // TODO: open EditGUI with selected tiles
             }
 
             @Override
