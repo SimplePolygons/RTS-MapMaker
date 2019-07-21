@@ -47,26 +47,6 @@ public class EditGUI extends JPanel {
         isRoad_cb = new JComboBox(isRoad_list);
         isRoad_cb.setSelectedIndex(0);
         isRoad_panel.add(isRoad_cb);
-
-        JButton apply_isRoad = new JButton("Apply");
-        isRoad_panel.add(apply_isRoad);
-        //code
-        apply_isRoad.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                boolean val = (isRoad_cb.getSelectedIndex() == 0);
-                int size = grid.selectedTiles.size();
-                for(int i = 0; i < size; i++) {
-                    Tile t = grid.selectedTiles.get(i);
-                    t.setIsRoad(val);
-                    t.displayIsRoad();
-                }
-                // refresh GUI
-                gui.repaint();
-                gui.revalidate();
-            }
-        });
-        // this.add(isRoad_panel,  BorderLayout.NORTH);
         mainPanel.add(isRoad_panel);
         // ============================================================= //
         // ======================== END IS ROAD ======================== //
@@ -84,25 +64,6 @@ public class EditGUI extends JPanel {
         orien_cb = new JComboBox(orien_list);
         orien_cb.setSelectedIndex(0);
         orientation_panel.add(orien_cb);
-
-        JButton apply_orientation = new JButton("Apply");
-        orientation_panel.add(apply_orientation);
-        // code
-        apply_orientation.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int size = grid.selectedTiles.size();
-                for(int i = 0; i < size; i++) {
-                    Tile t = grid.selectedTiles.get(i);
-                    t.setOrientation(orien_cb.getSelectedIndex());
-                    t.displayOrientation();
-                }
-                // refresh GUI
-                gui.repaint();
-                gui.revalidate();
-            }
-        });
-        // this.add(orientation_panel, BorderLayout.CENTER);
         mainPanel.add(orientation_panel);
         // ============================================================= //
         // ====================== END ORIENTATION ====================== //
@@ -120,25 +81,6 @@ public class EditGUI extends JPanel {
         owner_cb = new JComboBox(owner_list);
         owner_cb.setSelectedIndex(0);
         owner_panel.add(owner_cb);
-
-        JButton apply_owner = new JButton("Apply");
-        owner_panel.add(apply_owner);
-        // code
-        apply_owner.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int size = grid.selectedTiles.size();
-                for(int i = 0; i < size; i++) {
-                    Tile t = grid.selectedTiles.get(i);
-                    t.setOwner(owner_cb.getSelectedIndex());
-                    t.displayOwner();
-                }
-                // refresh GUI
-                gui.repaint();
-                gui.revalidate();
-            }
-        });
-        // this.add(owner_panel, BorderLayout.SOUTH);
         mainPanel.add(owner_panel);
         // ============================================================= //
         // ========================= END OWNER ========================= //
@@ -164,22 +106,6 @@ public class EditGUI extends JPanel {
         mesh_cb = new JComboBox(mesh_list_DEMO);
         mesh_cb.setSelectedIndex(0);
         mesh_panel.add(mesh_cb);
-
-        JButton apply_mesh_idx = new JButton("Apply");
-        mesh_panel.add(apply_mesh_idx);
-        // code
-        apply_mesh_idx.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int size = grid.selectedTiles.size();
-                for(int i = 0; i < size; i++) {
-                    Tile t = grid.selectedTiles.get(i);
-                    t.setMesh_idx(mesh_cb.getSelectedIndex());
-
-                    // TODO: display changes
-                }
-            }
-        });
         mainPanel.add(mesh_panel);
         // ============================================================= //
         // ========================= END MESH ========================== //
@@ -208,27 +134,6 @@ public class EditGUI extends JPanel {
         barr_cb = new JComboBox(grid.BARR_TYPE);
         barr_cb.setSelectedIndex(0);
         barricades_panel.add(barr_cb);
-
-        // apply barricades button
-        JButton apply_barricades = new JButton("Apply");
-        barricades_panel.add(apply_barricades);
-        // code
-        apply_barricades.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // get the type of the Barricades
-                int selected_type = barr_cb.getSelectedIndex();
-
-                // go through all of the selected Tiles
-                int size = grid.selectedTiles.size();
-                for(int i = 0; i < size; i++) {
-                    Tile t = grid.selectedTiles.get(i);
-                    t.setBarr(selected_type, cb_barr);
-
-                    // TODO: display changes && refresh GUI
-                }
-            }
-        });
 
         mainPanel.add(barricades_panel);
         // ============================================================= //
