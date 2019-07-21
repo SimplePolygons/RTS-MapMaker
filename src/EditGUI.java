@@ -77,7 +77,7 @@ public class EditGUI extends JPanel {
         JPanel owner_panel = new JPanel(new FlowLayout());
         owner_panel.add(new JLabel("Owner:"));
 
-        String[] owner_list = { "Default", "Player 1", "Player 2", "Special" };
+        String[] owner_list = { "Default", "Player 1", "Player 2", "Player 3", "Player 4", "Special" };
         owner_cb = new JComboBox(owner_list);
         owner_cb.setSelectedIndex(0);
         owner_panel.add(owner_cb);
