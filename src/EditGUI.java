@@ -9,6 +9,7 @@ public class EditGUI extends JPanel {
     GUI gui;
     // components
     JComboBox isRoad_cb;
+    JComboBox orien_cb;
 
     // CONSTRUCTORS
     public EditGUI(Grid grid, GUI gui, int width, int height) {
@@ -76,7 +77,7 @@ public class EditGUI extends JPanel {
         orientation_panel.add(new JLabel("Orientation:"));
 
         String[] orien_list = { "North", "East", "South", "West" };
-        JComboBox orien_cb = new JComboBox(orien_list);
+        orien_cb = new JComboBox(orien_list);
         orien_cb.setSelectedIndex(0);
         orientation_panel.add(orien_cb);
 

@@ -16,17 +16,19 @@ public class ApplyAllButton extends JButton {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("[STATUS]: Apply all button clicked");
 
-                // ISROAD
-                boolean val = (edit.isRoad_cb.getSelectedIndex() == 0);
                 int size = edit.grid.selectedTiles.size();
+                boolean val = (edit.isRoad_cb.getSelectedIndex() == 0);     // isRoad
+
                 for(int i = 0; i < size; i++) {
+                    // ISROAD
                     Tile t = edit.grid.selectedTiles.get(i);
                     t.setIsRoad(val);
                     t.displayIsRoad();
+
+                    // ORIENTATION
+                    t.setOrientation(edit.orien_cb.getSelectedIndex());
+                    t.displayOrientation();
                 }
-
-                //
-
 
                 // refresh GUI
                 edit.gui.repaint();
