@@ -8,8 +8,9 @@ public class EditGUI extends JPanel {
     Grid grid;
     GUI gui;
     // components
-    JComboBox isRoad_cb;
-    JComboBox orien_cb;
+    protected JComboBox isRoad_cb;
+    protected JComboBox orien_cb;
+    protected JComboBox owner_cb;
 
     // CONSTRUCTORS
     public EditGUI(Grid grid, GUI gui, int width, int height) {
@@ -113,7 +114,7 @@ public class EditGUI extends JPanel {
         owner_panel.add(new JLabel("Owner:"));
 
         String[] owner_list = { "Default", "Player 1", "Player 2", "Special" };
-        JComboBox owner_cb = new JComboBox(owner_list);
+        owner_cb = new JComboBox(owner_list);
         owner_cb.setSelectedIndex(0);
         owner_panel.add(owner_cb);
 

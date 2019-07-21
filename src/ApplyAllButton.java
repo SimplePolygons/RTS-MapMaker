@@ -28,6 +28,10 @@ public class ApplyAllButton extends JButton {
                     // ORIENTATION
                     t.setOrientation(edit.orien_cb.getSelectedIndex());
                     t.displayOrientation();
+
+                    // OWNER
+                    t.setOwner(edit.owner_cb.getSelectedIndex());
+                    t.displayOwner();
                 }
 
                 // refresh GUI
