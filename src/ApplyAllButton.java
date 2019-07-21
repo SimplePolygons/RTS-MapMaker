@@ -14,7 +14,7 @@ public class ApplyAllButton extends JButton {
         addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("[STATUS]: Apply all button clicked");
+                // System.out.println("[STATUS]: Apply all button clicked");
 
                 int size = edit.grid.selectedTiles.size();
                 boolean val = (edit.isRoad_cb.getSelectedIndex() == 0);     // isRoad
@@ -32,6 +32,12 @@ public class ApplyAllButton extends JButton {
                     // OWNER
                     t.setOwner(edit.owner_cb.getSelectedIndex());
                     t.displayOwner();
+
+                    // MESH
+                    t.setMesh_idx(edit.mesh_cb.getSelectedIndex());
+                    // TODO: display changes
+
+
                 }
 
                 // refresh GUI

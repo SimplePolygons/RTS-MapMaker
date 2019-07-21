@@ -11,6 +11,7 @@ public class EditGUI extends JPanel {
     protected JComboBox isRoad_cb;
     protected JComboBox orien_cb;
     protected JComboBox owner_cb;
+    protected JComboBox mesh_cb;
 
     // CONSTRUCTORS
     public EditGUI(Grid grid, GUI gui, int width, int height) {
@@ -158,7 +159,7 @@ public class EditGUI extends JPanel {
         // String[] mesh_buildings_list = { "BT_Example_001", "BT_Example_002" };
 
         String[] mesh_list_DEMO = {"BT_Example_001", "BT_Example_002", "RT_Example_001", "RT_Example_002"};
-        JComboBox mesh_cb = new JComboBox(mesh_list_DEMO);
+        mesh_cb = new JComboBox(mesh_list_DEMO);
         mesh_cb.setSelectedIndex(0);
         mesh_panel.add(mesh_cb);
 
