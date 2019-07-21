@@ -7,6 +7,8 @@ public class EditGUI extends JPanel {
     // ATTRIBUTES
     Grid grid;
     GUI gui;
+    // components
+    JComboBox isRoad_cb;
 
     // CONSTRUCTORS
     public EditGUI(Grid grid, GUI gui, int width, int height) {
@@ -37,7 +39,7 @@ public class EditGUI extends JPanel {
         isRoad_panel.add(new JLabel("This tile is a:"));
 
         String[] isRoad_list = {"ROAD", "BUILDING"};
-        JComboBox isRoad_cb = new JComboBox(isRoad_list);
+        isRoad_cb = new JComboBox(isRoad_list);
         isRoad_cb.setSelectedIndex(0);
         isRoad_panel.add(isRoad_cb);
 
