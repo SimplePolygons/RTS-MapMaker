@@ -12,6 +12,8 @@ public class EditGUI extends JPanel {
     protected JComboBox orien_cb;
     protected JComboBox owner_cb;
     protected JComboBox mesh_cb;
+    protected JComboBox barr_cb;
+    protected Checkbox[] cb_barr;
 
     // CONSTRUCTORS
     public EditGUI(Grid grid, GUI gui, int width, int height) {
@@ -192,7 +194,7 @@ public class EditGUI extends JPanel {
         barricades_panel.add(new JLabel("Barricade:"));
 
         // barricade locations
-        Checkbox[] cb_barr = new Checkbox[4];
+        cb_barr = new Checkbox[4];
         JPanel barr_cb_panel = new JPanel(new GridLayout(4,1));
 
         // display the new checkboxes
@@ -203,7 +205,7 @@ public class EditGUI extends JPanel {
         barricades_panel.add(barr_cb_panel);
 
         // barricade types
-        JComboBox barr_cb = new JComboBox(grid.BARR_TYPE);
+        barr_cb = new JComboBox(grid.BARR_TYPE);
         barr_cb.setSelectedIndex(0);
         barricades_panel.add(barr_cb);
 

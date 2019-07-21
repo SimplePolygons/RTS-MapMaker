@@ -18,7 +18,9 @@ public class ApplyAllButton extends JButton {
 
                 int size = edit.grid.selectedTiles.size();
                 boolean val = (edit.isRoad_cb.getSelectedIndex() == 0);     // isRoad
+                int selected_type = edit.barr_cb.getSelectedIndex(); // get the type of the Barricades
 
+                // go through all of the selected Tiles
                 for(int i = 0; i < size; i++) {
                     // ISROAD
                     Tile t = edit.grid.selectedTiles.get(i);
@@ -37,7 +39,9 @@ public class ApplyAllButton extends JButton {
                     t.setMesh_idx(edit.mesh_cb.getSelectedIndex());
                     // TODO: display changes
 
-
+                    // BARRICADES
+                    t.setBarr(selected_type, edit.cb_barr);
+                    // TODO: display changes
                 }
 
                 // refresh GUI
