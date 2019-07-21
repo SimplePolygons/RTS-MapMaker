@@ -12,10 +12,12 @@ public class Grid {
     protected final int SOUTH = 2;
     protected final int WEST  = 3;
     // owning player
-    protected final int NONE       = 0;     // default
-    protected final int PLAYER_ONE = 1;
-    protected final int PLAYER_TWO = 2;
-    protected final int SPECIAL    = 3;
+    protected final int NONE         = 0;     // default
+    protected final int PLAYER_ONE   = 1;
+    protected final int PLAYER_TWO   = 2;
+    protected final int PLAYER_THREE = 3;
+    protected final int PLAYER_FOUR  = 4;
+    protected final int SPECIAL      = 5;
     // button details
     final MatteBorder DEFAULT_BORDER = BorderFactory.createMatteBorder(1,1,1,1, Color.BLACK);
     final MatteBorder SELECTED_BORDER= BorderFactory.createMatteBorder(5, 5, 5, 5, Color.YELLOW);
