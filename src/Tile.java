@@ -243,4 +243,53 @@ public class Tile extends JButton {
             setText("D");
         }
     }
+
+    /**
+     * Displays information about the Tile on the gui (isRoad, Owner and Orientation)
+     */
+    public void displayTile() {
+        String path = "src/Icons/";
+        // isRoad
+        if(isRoad) {
+            path+="Road_";
+
+            // owner
+            if(this.owner == this.owningGrid.PLAYER_ONE)
+                path+="Player1";
+            else if(this.owner == this.owningGrid.PLAYER_TWO)
+                path+="Player2";
+            else if(this.owner == this.owningGrid.PLAYER_THREE)
+                path+="Player3";
+            else if(this.owner == this.owningGrid.PLAYER_FOUR)
+                path+="Player4";
+            /*
+            else if(this.owner == this.owningGrid.SPECIAL) {
+                path+="S";
+            }
+            */
+            else {
+                path+="Def";
+            }
+            path+="_";
+
+        } else path+="Building_";
+
+        // orientation
+        if(this.orientation == this.owningGrid.NORTH)
+            path+="North";
+        else if(this.orientation == this.owningGrid.EAST)
+            path+="East";
+        else if(this.orientation == this.owningGrid.SOUTH)
+            path+="South";
+        else if(this.orientation == this.owningGrid.WEST)
+            path+="West";
+        else {
+            System.out.println("[ERROR]: unknown orientation, set to default: NORTH");
+            path+="North";
+        }
+
+        path+=".png";
+
+        setIcon(new ImageIcon(path));
+    }
 }

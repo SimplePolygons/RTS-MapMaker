@@ -25,15 +25,17 @@ public class ApplyAllButton extends JButton {
                     // ISROAD
                     Tile t = edit.grid.selectedTiles.get(i);
                     t.setIsRoad(val);
-                    t.displayIsRoad();
+                    // t.displayIsRoad();
 
                     // ORIENTATION
                     t.setOrientation(edit.orien_cb.getSelectedIndex());
-                    t.displayOrientation();
+                    // t.displayOrientation();
 
                     // OWNER
                     t.setOwner(edit.owner_cb.getSelectedIndex());
-                    t.displayOwner();
+                    // t.displayOwner();
+
+                    t.displayTile();
 
                     // MESH
                     t.setMesh_idx(edit.mesh_cb.getSelectedIndex());
