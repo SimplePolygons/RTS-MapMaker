@@ -233,7 +233,7 @@ public class EditGUI extends JPanel {
         // ======================= APPLY ALL BUTTON ==================== //
         // ============================================================= //
 
-        JButton apply_all = new JButton("Apply");
+        ApplyAllButton apply_all = new ApplyAllButton("Apply", this);
         mainPanel.add(apply_all);
 
         // ============================================================= //
