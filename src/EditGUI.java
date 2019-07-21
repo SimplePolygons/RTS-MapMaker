@@ -27,7 +27,7 @@ public class EditGUI extends JPanel {
      */
     private void setup() {
         // main panel
-        JPanel mainPanel = new JPanel(new GridLayout(5,1)); // NOTE: when adding new edit options, increment the rows parameter!
+        JPanel mainPanel = new JPanel(new GridLayout(6,1)); // NOTE: when adding new edit options, increment the rows parameter!
         this.add(mainPanel);
 
         // ============================================================= //
@@ -229,6 +229,15 @@ public class EditGUI extends JPanel {
         // ============================================================= //
 
 
+        // ============================================================= //
+        // ======================= APPLY ALL BUTTON ==================== //
+        // ============================================================= //
 
+        JButton apply_all = new JButton("Apply");
+        mainPanel.add(apply_all);
+
+        // ============================================================= //
+        // ===================== END APPLY ALL BUTTON ================== //
+        // ============================================================= //
     }
 }
