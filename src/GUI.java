@@ -128,7 +128,10 @@ public class GUI extends JFrame {
                         t.setOwner(grid.NONE);
 
                         // barricades
-                        t.setBarr(grid.NO_BARRICADES);
+                        // t.setBarr(grid.NO_BARRICADES);
+                        for(int orien = 0; orien < 4; orien++) {
+                            t.barr[orien] = new Barricade(generator.nextInt(grid.BARR_TYPE.length));
+                        }
 
                         t.displayTile();
                     }
