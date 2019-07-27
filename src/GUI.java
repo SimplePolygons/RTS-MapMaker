@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -100,7 +101,10 @@ public class GUI extends JFrame {
     }
 
     /**
-     * Adds the random generated map button to the GUI
+     * Adds the random generated map button to the GUI.
+     * The Button generates rewrites the current Grid randomly, only ignoring barricades
+     * and owners (might change in the future).
+     * currently, it sets: isRoad, Orientation
      * @param jp            settings JPanel, to which the
      */
     private void addRGMButton(JPanel jp) {
@@ -108,7 +112,27 @@ public class GUI extends JFrame {
         random_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Random generator = new Random();
 
+                // go through all Tiles
+                for(Tile[] row : grid.tile) {
+                    for(Tile t : row) {
+
+                        // isRoad
+                        t.setIsRoad(generator.nextBoolean());
+
+                        // orientation
+                        t.setOrientation(generator.nextInt(4));
+
+                        // owner
+                        t.setOwner(grid.NONE);
+
+                        // barricades
+                        t.setBarr(grid.NO_BARRICADES);
+
+                        t.displayTile();
+                    }
+                }
             }
         });
 
