@@ -42,10 +42,13 @@ public class GUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("[STATUS]: Pressed");
 
-                // remove previous version of the map
                 if(grid != null) {
+                    // remove previous version of the map
                     removeTiles();
                     remove(edit);
+                } else {
+                    // add the RGM button
+                    addRGMButton(settings_panel);
                 }
 
                 // get values for height and width
@@ -94,6 +97,22 @@ public class GUI extends JFrame {
         this.add(save_panel, BorderLayout.SOUTH);
 
         save_button.addActionListener(jsonmkr = new JsonMaker(grid, tf_file_name));
+    }
+
+    /**
+     * Adds the random generated map button to the GUI
+     * @param jp            settings JPanel, to which the
+     */
+    private void addRGMButton(JPanel jp) {
+        JButton random_button = new JButton("Random Grid");
+        random_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        jp.add(random_button);
     }
 
     /**
