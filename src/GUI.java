@@ -136,6 +136,24 @@ public class GUI extends JFrame {
                         t.displayTile();
                     }
                 }
+
+                // randomly assign owners of Tiles
+                for(int player = 1; player <= 4; player++) {
+                    Random r = new Random();
+                    // get random column&row
+                    int col = r.nextInt(grid.h());
+                    int row = r.nextInt(grid.w());
+
+                    while(grid.tile[col][row].owner != grid.NONE) {     // makes sure that each chosen tile is different
+                        col = r.nextInt(grid.h());
+                        row = r.nextInt(grid.w());
+                    }
+
+                    Tile t = grid.tile[col][row];
+                    t.setIsRoad(true);
+                    t.setOwner(player);
+                    t.displayTile();
+                }
             }
         });
 
