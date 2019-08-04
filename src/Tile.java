@@ -121,8 +121,6 @@ public class Tile extends JButton {
         }else{
             if(isTileSelected) {
                 System.out.println("[STATUS]: Deselected Tile " + tileNum);
-                // setBorder(owningGrid.DEFAULT_BORDER);
-                BorderFactory.createMatteBorder(5, 5, 5, 5, Color.YELLOW);
                 setBorder(BorderFactory.createMatteBorder(
                         2*barr[owningGrid.NORTH].type,
                         2*barr[owningGrid.WEST].type,
@@ -279,21 +277,34 @@ public class Tile extends JButton {
             }
             path+="_";
 
+
         } else path+="Building_";
 
         // orientation
-        if(this.orientation == this.owningGrid.NORTH)
+        if(this.orientation == this.owningGrid.NORTH) {
             path+="North";
-        else if(this.orientation == this.owningGrid.EAST)
+        }
+        else if(this.orientation == this.owningGrid.EAST) {
             path+="East";
-        else if(this.orientation == this.owningGrid.SOUTH)
+        }
+        else if(this.orientation == this.owningGrid.SOUTH) {
             path+="South";
-        else if(this.orientation == this.owningGrid.WEST)
+        }
+        else if(this.orientation == this.owningGrid.WEST) {
             path+="West";
+        }
         else {
             System.out.println("[ERROR]: unknown orientation, set to default: NORTH");
             path+="North";
         }
+
+        // barricades
+        setBorder(BorderFactory.createMatteBorder(
+                2*barr[owningGrid.NORTH].type,
+                2*barr[owningGrid.WEST].type,
+                2*barr[owningGrid.SOUTH].type,
+                2*barr[owningGrid.EAST].type, Color.BLACK)
+        );
 
         path+=".png";
 
