@@ -248,7 +248,7 @@ public class Tile extends JButton {
      * Displays information about the Tile on the gui (isRoad, Owner and Orientation)
      */
     public void displayTile() {
-        String path = "src/Icons/";
+        String path = "Icons/";
         // isRoad
         if(isRoad) {
             path+="Road_";
