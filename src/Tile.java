@@ -121,7 +121,14 @@ public class Tile extends JButton {
         }else{
             if(isTileSelected) {
                 System.out.println("[STATUS]: Deselected Tile " + tileNum);
-                setBorder(owningGrid.DEFAULT_BORDER);
+                // setBorder(owningGrid.DEFAULT_BORDER);
+                BorderFactory.createMatteBorder(5, 5, 5, 5, Color.YELLOW);
+                setBorder(BorderFactory.createMatteBorder(
+                        2*barr[owningGrid.NORTH].type,
+                        2*barr[owningGrid.WEST].type,
+                        2*barr[owningGrid.SOUTH].type,
+                        2*barr[owningGrid.EAST].type, Color.BLACK)
+                );
                 owningGrid.selectedTiles.remove(me);
                 isTileSelected = false;
             }

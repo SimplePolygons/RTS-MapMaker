@@ -19,7 +19,7 @@ public class Grid {
     protected final int PLAYER_FOUR  = 4;
     protected final int SPECIAL      = 5;
     // button details
-    final MatteBorder DEFAULT_BORDER = BorderFactory.createMatteBorder(1,1,1,1, Color.BLACK);
+    final MatteBorder DEFAULT_BORDER = BorderFactory.createMatteBorder(0,0,0,0, Color.BLACK);
     final MatteBorder SELECTED_BORDER= BorderFactory.createMatteBorder(5, 5, 5, 5, Color.YELLOW);
     // mesh details
     protected final int NO_MESH = -1;
