@@ -114,6 +114,9 @@ public class GUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 Random generator = new Random();
 
+                // deselect all tiles to prevent possible
+                grid.deselectAllTiles();
+
                 // go through all Tiles
                 for(Tile[] row : grid.tile) {
                     for(Tile t : row) {
@@ -139,14 +142,13 @@ public class GUI extends JFrame {
 
                 // randomly assign owners of Tiles
                 for(int player = 1; player <= 4; player++) {
-                    Random r = new Random();
                     // get random column&row
-                    int col = r.nextInt(grid.h());
-                    int row = r.nextInt(grid.w());
+                    int col = generator.nextInt(grid.h());
+                    int row = generator.nextInt(grid.w());
 
                     while(grid.tile[col][row].owner != grid.NONE) {     // makes sure that each chosen tile is different
-                        col = r.nextInt(grid.h());
-                        row = r.nextInt(grid.w());
+                        col = generator.nextInt(grid.h());
+                        row = generator.nextInt(grid.w());
                     }
 
                     Tile t = grid.tile[col][row];

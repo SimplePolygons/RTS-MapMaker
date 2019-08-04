@@ -117,4 +117,11 @@ public class Grid {
         }
     }
 
+    /**
+     * Deselects all Tiles that are currently selected
+     */
+    public void deselectAllTiles() {
+        while(selectedTiles.size() > 0)
+            selectedTiles.get(0).setSelected(false);
+    }
 }
