@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d3758ad-da34-4e09-8512-6e82d4bf2457" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,19 +20,19 @@
     <session id="-408649150">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="52" />
+          <entry key="project.closed" value="54" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="4" />
-          <entry key="project.open.time.13" value="3" />
+          <entry key="project.open.time.13" value="4" />
           <entry key="project.open.time.14" value="5" />
           <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.19" value="4" />
-          <entry key="project.open.time.2" value="4" />
+          <entry key="project.open.time.2" value="5" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.24" value="1" />
@@ -48,7 +48,7 @@
           <entry key="project.open.time.62" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.70" value="1" />
-          <entry key="project.opened" value="53" />
+          <entry key="project.opened" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -91,8 +91,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="132" column="97" selection-start-line="132" selection-start-column="97" selection-end-line="132" selection-end-column="97" />
+            <state relative-caret-position="1173">
+              <caret line="132" column="100" selection-start-line="132" selection-start-column="100" selection-end-line="132" selection-end-column="100" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EditGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
+            <state relative-caret-position="1292">
               <caret line="79" column="88" selection-start-line="79" selection-start-column="88" selection-end-line="79" selection-end-column="88" />
             </state>
           </provider>
@@ -112,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ApplyAllButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="187">
               <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -124,7 +124,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="255">
               <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
             </state>
           </provider>
@@ -133,7 +133,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
+            <state relative-caret-position="272">
               <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
               <folding>
                 <element signature="e#2331#2332#0" expanded="true" />
@@ -205,10 +205,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="482" />
-    <option name="y" value="-28" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="480" />
+    <option name="y" value="-30" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -278,7 +278,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20992908" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20992908" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39741752" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -393,17 +393,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EditGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
+        <state relative-caret-position="1292">
           <caret line="79" column="88" selection-start-line="79" selection-start-column="88" selection-end-line="79" selection-end-column="88" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ApplyAllButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="187">
           <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding>
+            <element signature="e#2331#2332#0" expanded="true" />
+            <element signature="e#2377#2378#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -415,28 +433,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-          <folding>
-            <element signature="e#2331#2332#0" expanded="true" />
-            <element signature="e#2377#2378#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Grid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="132" column="97" selection-start-line="132" selection-start-column="97" selection-end-line="132" selection-end-column="97" />
+        <state relative-caret-position="1173">
+          <caret line="132" column="100" selection-start-line="132" selection-start-column="100" selection-end-line="132" selection-end-column="100" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
